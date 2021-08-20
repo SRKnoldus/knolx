@@ -7,8 +7,34 @@
       </div>
     </div>
     <div class="row">
-      <div class="col text-center">
+      <div class="col text-center py-3">
         <h2>Feeling hungry are we?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="text-center card border-dark">
+          <div class="card-body text-dark">
+            <p class="card-text">Cold Drinks available right now ...</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <ng-container *ngFor="let coldDrink of coldDrinksAvailable">
+              <li class="list-group-item list-group-item-action">{{coldDrink}}</li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-center card border-dark">
+          <div class="card-body text-dark">
+            <p class="card-text">Hot Beverages available right now ...</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <ng-container *ngFor="let hotDrink of hotDrinksAvailable">
+              <li class="list-group-item list-group-item-action">{{hotDrink}}</li>
+            </ng-container>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

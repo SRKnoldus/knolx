@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PantryService} from "../pantry.service";
 
 @Component({
   selector: 'app-coach-pantry',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coach-pantry.component.css']
 })
 export class CoachPantryComponent implements OnInit {
+  drinksAvailable: any;
+  coldDrinksAvailable: any;
+  hotDrinksAvailable: any;
 
-  constructor() { }
+  constructor(
+    private pantryService: PantryService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.drinksAvailable = this.pantryService.getDrinks();
+    this.coldDrinksAvailable = this.pantryService.getColdDrinks();
+    this.hotDrinksAvailable = this.pantryService.getHotDrinks();
   }
 
 }
